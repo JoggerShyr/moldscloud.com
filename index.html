@@ -27,12 +27,13 @@
         </a>
       </div>
 
+      <!-- Menu Button -->
 			<script>
 				function uncheck() {
 					document.getElementById("toggle").checked = false;
 				}
 			</script>
-			<!-- Menu Button -->
+
       <label for="toggle">&#9776;</label>
       <input type="checkbox" id="toggle" />
 
@@ -62,8 +63,39 @@
     </header>
 
     <main>
-      <section class="hero">
-        <img src="https://picsum.photos/id/870/800/400" />
+      <section class="slide-show">
+        <a class="prev" onclick="prev()">&#10094;</a>
+        <img class="slide" src="img/slide-show/Products-1.gif">
+        <img class="slide" src="img/slide-show/Products-2.gif">
+        <img class="slide" src="img/slide-show/Products-3.gif">
+        <img class="slide" src="img/slide-show/Products-4.gif">
+        <img class="slide" src="img/slide-show/Products-5.gif">
+        <img class="slide" src="img/slide-show/Products-6.gif">
+        <a class="next" onclick="next()">&#10095;</a>
+
+        <script>
+          const Delay = 3; /* seconds */
+          let slideIndex = 0, timeoutID = undefined;
+          let slides = document.getElementsByClassName("slide");
+
+          showSlide(slideIndex);
+
+          function prev() { showSlide( --slideIndex ); }
+          function next() { showSlide( ++slideIndex ); }
+          function showSlide(n) {
+            if (timeoutID) clearTimeout(timeoutID);
+
+            slideIndex = (n >= 0) ? n : slides.length - 1;
+            slideIndex = (n < slides.length) ? n : 0;
+
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display
+                = (i === slideIndex) ? "block" : "none";
+            }
+
+            timeoutID = setTimeout(next, Delay * 1000);
+          }
+        </script>
       </section>
 
       <section id="about">

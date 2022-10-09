@@ -2,24 +2,16 @@
 
 $primary-color: #3396ff;
 
+* {/* CSS reset */
+  margin: 0; padding: 0;
+  border: 0px dashed white;
+}
+
 html {
   font-family: "Nato Sans TC", sans-serif;
   font-size: initial;
   line-height: initial;
   font: normal;
-}
-
-* {
-  border: 0px dashed white;
-}
-
-body {
-  box-sizing: border-box;
-  margin: 0 auto; // center body content
-  max-width: 960px;
-
-  background: white;
-  color: black;
 
   a,
   a:visited {
@@ -30,11 +22,25 @@ body {
   a:hover {
     font-weight: bold;
   }
+
+  h1 {
+    color: $primary-color;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0 auto; // center body content
+  max-width: 960px; // Maximum body width
+
+  background: white;
+  color: black;
 }
 
 header {
   width: 100%;
-  display: flex; flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
   justify-content: center;
   align-content: center;
@@ -44,16 +50,28 @@ header {
     flex: none;
   }
 
+  label,
+  #toggle {
+    display: none;
+  }
+
   nav {
+    display: flex;
+    flex-direction: row;
     flex: auto;
 
-    display: flex; flex-direction: row;
-    .Menu { flex: auto; }
-    .Language { flex: none;}
+    .Menu {
+      flex: auto;
+    }
+
+    .Language {
+      flex: none;
+    }
   }
 
   ul {
-    display: flex; flex-direction: row;
+    display: flex;
+    flex-direction: row;
     list-style-type: none;
     padding: 0.2em;
 
@@ -66,20 +84,48 @@ header {
     width: 1em;
     height: 1em;
   }
+}
 
-  label, #toggle {
+.slide-show {
+  max-width: 850px;
+  position: relative;
+  margin: auto;
+
+  .slide {
     display: none;
+    width: 100%;
+    margin: auto;
+    /*
+    animation-name: fade;
+    animation-duration: 1s;
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    */
   }
-}
 
-h1 {
-  color: $primary-color;
-}
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: $primary-color;
+    font-weight: 400;
+    font-size: 1.2em;
+    transition: 0.5s ease;
+    user-select: none;
+    cursor: pointer;
+  }
 
-.hero {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
+  .next {
+    right: 0;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba($primary-color/0.3);
+  }
 }
 
 footer {
@@ -100,7 +146,8 @@ footer {
   position: fixed;
   right: 3vw;
   bottom: 3vh;
-  display: flex; flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
   a {
     margin: 0 auto;
@@ -128,6 +175,7 @@ footer {
     }
 
     nav {
+      z-index: 1;
       display: none;
       width: 100%;
       position: fixed;
