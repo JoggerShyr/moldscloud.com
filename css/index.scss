@@ -2,8 +2,10 @@
 
 $primary-color: #3396ff;
 
-* {/* CSS reset */
-  margin: 0; padding: 0;
+* {
+  /* CSS reset */
+  margin: 0;
+  padding: 0;
   border: 0px dashed white;
 }
 
@@ -11,7 +13,6 @@ html {
   font-family: "Nato Sans TC", sans-serif;
   font-size: initial;
   line-height: initial;
-  font: normal;
 
   a,
   a:visited {
@@ -95,17 +96,12 @@ header {
     display: none;
     width: 100%;
     margin: auto;
-    /*
-    animation-name: fade;
-    animation-duration: 1s;
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    */
+
+    animation: slideIn 5s;
   }
 
-  .prev, .next {
+  .prev,
+  .next {
     position: absolute;
     top: 50%;
     width: auto;
@@ -123,8 +119,18 @@ header {
     right: 0;
   }
 
-  .prev:hover, .next:hover {
+  .prev:hover,
+  .next:hover {
     background-color: rgba($primary-color/0.3);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

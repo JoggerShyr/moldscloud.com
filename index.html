@@ -74,24 +74,23 @@
         <a class="next" onclick="next()">&#10095;</a>
 
         <script>
-          const Delay = 3; /* seconds */
-          let slideIndex = 0, timeoutID = undefined;
+          const Delay = 5; /* seconds */
+          let slideId = 0, timeoutID = undefined;
           let slides = document.getElementsByClassName("slide");
 
-          showSlide(slideIndex);
+          showSlide(slideId);
 
-          function prev() { showSlide( --slideIndex ); }
-          function next() { showSlide( ++slideIndex ); }
+          function prev() { showSlide( --slideId ); }
+          function next() { showSlide( ++slideId ); }
           function showSlide(n) {
-            if (timeoutID) clearTimeout(timeoutID);
-
-            slideIndex = (n >= 0) ? n : slides.length - 1;
-            slideIndex = (n < slides.length) ? n : 0;
-
+            clearTimeout(timeoutID);
             for (i = 0; i < slides.length; i++) {
-              slides[i].style.display
-                = (i === slideIndex) ? "block" : "none";
+              slides[i].style.display = "none";
             }
+
+            slideId = (n >= 0) ? slideId : slides.length - 1;
+            slideId = (n < slides.length) ? slideId : 0;
+            slides[slideId].style.display = "block";
 
             timeoutID = setTimeout(next, Delay * 1000);
           }
