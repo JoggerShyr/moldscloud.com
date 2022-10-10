@@ -24,7 +24,10 @@ html {
     font-weight: bold;
   }
 
-  h1 {
+  h1, h2 {
+    margin: 0.5em 0;
+    border: 0px dash blue;
+    padding: 0px;
     color: $primary-color;
   }
 }
@@ -97,7 +100,16 @@ header {
     width: 100%;
     margin: auto;
 
-    animation: slideIn 5s;
+    animation: slideIn 1s ease;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .prev,
@@ -121,16 +133,34 @@ header {
 
   .prev:hover,
   .next:hover {
-    background-color: rgba($primary-color/0.3);
+    background-color: rgba($primary-color, 0.3);
   }
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
+#about,
+#investor {
+  margin: 1em 0;
+
+  p {
+    margin: 0.5em 0;
+    border: 0px solid blue;
+    padding: 0em;
+    text-indent: 2em;
   }
-  to {
-    opacity: 1;
+
+  ul,
+  ol {
+    margin: 2em;
+  }
+
+  li {
+    margin: 0.25em;
+  }
+
+  h2 {
+    margin: 0.5em;
+    text-align: center;
+    text-decoration: underline;
   }
 }
 
