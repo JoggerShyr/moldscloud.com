@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <title>MoldsCloud.com - Global mold and peripheral industry trading platform</title>
+    <meta name="description" content="Global mold and peripheral industry trading platform" />
+
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1d7c45" />
+
+    <!-- Icon -->
+    <link rel="icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" type="image/png" href="icon.png" />
+
+    <!-- CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+  </head>
+  <body id="top">
+    <header>
+      <div class="Logo">
+        <a href="#">
+          <img src="/img/moldscloud-188x49-transparent.png" />
+        </a>
+      </div>
+
+      <!-- Menu Button -->
+			<script>
+				function uncheck() {
+					document.getElementById("toggle").checked = false;
+				}
+			</script>
+
+      <label for="toggle">&#9776;</label>
+      <input type="checkbox" id="toggle" />
+
+      <!-- Menu -->
+      <nav>
+				<div class="Menu">
+	        <ul>
+						<li><a href="#about" onclick="uncheck();">About us</a></li>
+						<li><a href="#investor" onclick="uncheck();">Investors</a></li>
+            <!--
+            <li>Customers</li>
+						<li>Technology</li>
+						<li>Exhibition</li>
+						<li>Membership</li>
+            -->
+	        </ul>
+				</div>
+				<div class="Language">
+					<ul>
+						<li><img src="img/language.png" /></li>
+						<li><a href="index.html">繁中</a></li>
+						<li><a href="index-cn.html">简中</a></li>
+						<li><a href="index-eng.html">Eng</a></li>
+					</ul>
+				</div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="slide-show">
+        <a class="prev" onclick="prev()">&#10094;</a>
+        <img class="slide" src="img/slide-show/Products-1.gif">
+        <img class="slide" src="img/slide-show/Products-2.gif">
+        <img class="slide" src="img/slide-show/Products-3.gif">
+        <img class="slide" src="img/slide-show/Products-4.gif">
+        <img class="slide" src="img/slide-show/Products-5.gif">
+        <img class="slide" src="img/slide-show/Products-6.gif">
+        <a class="next" onclick="next()">&#10095;</a>
+
+        <script>
+          const Delay = 5; /* seconds */
+          let slideId = 0, timeoutID = undefined;
+          let slides = document.getElementsByClassName("slide");
+
+          showSlide(slideId);
+
+          function prev() { showSlide( --slideId ); }
+          function next() { showSlide( ++slideId ); }
+          function showSlide(n) {
+            clearTimeout(timeoutID);
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+
+            slideId = (n >= 0) ? slideId : slides.length - 1;
+            slideId = (n < slides.length) ? slideId : 0;
+            slides[slideId].style.display = "block";
+
+            timeoutID = setTimeout(next, Delay * 1000);
+          }
+        </script>
+      </section>
+
+      <section id="about">
+        <h1>About us</h1>
+        <p>We are a group of teams from the technology industry, semiconductor industry, I.T. industry, machinery industry, electronics industry, power supply industry, MEMS industry... etc. Retired but still gearing up, combined with a number of mold industry bosses to form a core team, Based on the vast demand market of the mold industry, we initially set a career for the next 50 years.</p>
+        <p>"Molds Cloud" uses the latest cloud technology to build a platform to solve problems, improve technology, increase equipment, further integrate, collectively operate, and form a strong supply chain, focusing on Meet market demand.</p>
+        <p>Obviously, the market demand is leaping forward, intelligence, high-end, modernization... etc. On the other hand, enterprises need to transform or lay off employees to survive on an appropriate scale, and they also require efficiency and cost down.</p>
+        <p>Then as a supplier, you should play the role of Supplier, and also focus on intelligence, high-end, modernization, and focus on efficiency and Cost Down to prepare and link with demand market companies.</p>
+        <p>Even more, for example, PDM needs to be done in the future. Boeing's development cycle is shortened by 50%, problems are reduced by 50%, and costs are reduced by 25%. This is a good example.</p>
+      </section>
+
+      <section id="investor">
+        <h1>Investors</h1>
+        <ul style="list-style-type:none;">
+          <li><h2>About Meiyun Technology</h2>
+            <p>At present, the company will first raise NT$10 million as the company's seed capital (Seed Fund), and the company's Vision (Vision) is three to five; it will take three to five years to develop three to five with the most advanced technology. Such state-of-the-art products can increase the company's stock price by at least three to five times.</p>
+          </li>
+          <li><h2>Product lines under development or to be developed</h2>
+            <ol>
+              <li><a href="https://www.moldscloud.com/">Moldscloud</a></li>
+              <li>Company data management system PDM</li>
+              <li>Smart POS / AI Web-based POS (software part)</li>
+              <li>Portable Multifunction Printer (Electronic System + Firmware + Mechanical)</li>
+              <li>The brand's official website takeaway e-commerce (eCommerce), the company has completed the front-end development of <a href="https://www.4cdragon.com">Four Seas Youlong</a>, and will integrate the green world gold flow and green world logistics of the green world technology company in the future.</li>
+            </ol>
+          </li>
+          <li><h2>E-commerce development prospects in Taiwan</h2>
+            <p>According to statistics from the Ministry of Economic Affairs, the scale of Taiwan's e-commerce industry in 2021 will exceed NT$300 billion, with an annual growth rate of more than 25%. According to statistics from the Information Policy Council, Taiwan's e-commerce market will continue to maintain double-digit growth of 10-15% every year. In addition to the rise of store opening platforms, the number of small and medium-sized e-commerce will only increase.</p>
+          </li>
+          <li><h2>Target customer group/target audience</h2>
+            <ul style="list-style-type:none;">
+              <li>Branded restaurant chain – eg: Four Seas Youlong</li>
+              <li>Food Retail Industry – Example: Fengyue Bakery Bakery Retail Store</li>
+              <li>European and American retail industry – export to Europe and the United States POS system including portable printer</li>
+            </ul>
+          </li>
+          <li><h2>Software developer needs and using software</h2>
+            <ol>
+              <li>Front-End Engineer – HTML5, CSS3, and JavaScript/Python.</li>
+              <li>Back-End Engineer – Node.js/Django and MongoDB/MySQL/PostgreSQL.</li>
+              <li>Product Designer (UI/UX Engineer) – Figma/ Adobe Xd.</li>
+              <li>MIS and Security Engineer – Network management is often called to manage everything, and it is true.</li>
+            </ol>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Mei<span>Yun</span> Technology Corp. All right reserved.
+      </p>
+    </footer>
+
+    <div class="Social-Menu">
+			<!--telephone-->
+			<a href="tel:123-456-7890">&#9742;</a>
+      <!--email-->
+			<a href="mailto:name@mail.com"><i class="fa-regular fa-envelope"></i></a>
+			<!--facebook-->
+      <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+			<a href="#top">
+			<!--top
+				<i class="fa-regular fa-chevron-up"></i>
+				<i class="fa-regular fa-house-blank"></i>
+				<img src="img/home.svg">
+			-->
+				<img src="img/home.svg">
+			</a>
+    </div>
+  </body>
+</html>

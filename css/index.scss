@@ -2,11 +2,10 @@
 
 $primary-color: #3396ff;
 
-* {
-  /* CSS reset */
-  margin: 0;
-  padding: 0;
-  border: 0px dashed white;
+* { /* CSS reset */
+  margin: 0px;
+  border: 0px dashed green;
+  padding: 0px;
 }
 
 html {
@@ -26,7 +25,7 @@ html {
 
   h1, h2 {
     margin: 0.5em 0;
-    border: 0px dash blue;
+    border: 0px dash green;
     padding: 0px;
     color: $primary-color;
   }
@@ -80,7 +79,7 @@ header {
     padding: 0.2em;
 
     li {
-      margin: 0.1em;
+      margin: 0.1em 0.5em;
     }
   }
 
@@ -88,6 +87,8 @@ header {
     width: 1em;
     height: 1em;
   }
+
+  .Language li { margin: 0.1em; }
 }
 
 .slide-show {
@@ -143,7 +144,7 @@ header {
 
   p {
     margin: 0.5em 0;
-    border: 0px solid blue;
+    border: 0px solid green;
     padding: 0em;
     text-indent: 2em;
   }
