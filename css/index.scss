@@ -91,39 +91,36 @@ header {
   .Language li { margin: 0.1em; }
 }
 
-.slide-show {
-  max-width: 850px;
+#slide-show {
+  margin: 0 auto;
   position: relative;
-  margin: auto;
 
   .slide {
     display: none;
-    width: 100%;
     margin: auto;
+    width: 880px;
+    height: 550px;
 
-    animation: slideIn 1s ease;
+    animation: slideOpen 1s ease;
   }
 
-  @keyframes slideIn {
+  @keyframes slideOpen {
     from {
-      opacity: 0;
+      //opacity: 0;
+      width: 0px;
     }
     to {
-      opacity: 1;
+      //opacity: 1;
+      width: 880px;
     }
   }
 
   .prev,
   .next {
     position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: $primary-color;
-    font-weight: 400;
-    font-size: 1.2em;
-    transition: 0.5s ease;
+    top: 48%;
+    padding: 0.5em;
+    font-size: 1.5em;
     user-select: none;
     cursor: pointer;
   }
