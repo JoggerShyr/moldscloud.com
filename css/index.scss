@@ -2,14 +2,13 @@
 
 $primary-color: #3396ff;
 
-* {
-  /* CSS reset */
+* { /* CSS reset */
   margin: 0px;
   border: 0px dashed green;
   padding: 0px;
 }
 
-html {
+html { /* common CSS */
   font-family: "Nato Sans TC", sans-serif;
   font-size: initial;
   line-height: initial;
@@ -102,8 +101,8 @@ header {
   .slide {
     display: none;
     margin: auto;
+    max-width: 880px;
     width: 100%;
-    max-width: 850px;
     height: auto;
     object-fit: fill;
 
