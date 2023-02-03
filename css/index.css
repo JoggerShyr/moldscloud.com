@@ -1,14 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap");
-* { /* CSS reset */
+* { /* Initialization */
   margin: 0px;
-  border: 0px dashed green;
+  border: 0px dashed #3396ff;
   padding: 0px;
-}
-
-html { /* common CSS */
   font-family: "Nato Sans TC", sans-serif;
   font-size: initial;
   line-height: initial;
+}
+
+html { /* Utilities */
+  /*
+  .NestedOL {
+    ol {
+      margin: 0; padding: 0;
+      list-style-type: none;
+      counter-reset: item;
+    }
+
+    li {
+      display: table;
+      counter-increment: item;
+      margin-bottom: 0.6em;
+    }
+
+    li:before {
+        content: counters(item, ".") ". ";
+        display: table-cell;
+        padding-right: 0.6em;    
+    }
+
+    li li {
+        margin: 0;
+    }
+
+    li li:before {
+        content: counters(item, ".") " ";
+    }
+  }
+  */
 }
 html a,
 html a:visited {
@@ -24,6 +53,20 @@ html h2 {
   border: 0px dash green;
   padding: 0px;
   color: #3396ff;
+}
+html .NestedOL ol {
+  counter-reset: item;
+}
+html .NestedOL ol li {
+  display: block;
+  position: relative;
+}
+html .NestedOL ol li:before {
+  content: counters(item, ".") ".";
+  counter-increment: item;
+  position: absolute;
+  margin-right: 100%;
+  right: 0.5em;
 }
 
 body {
@@ -184,8 +227,14 @@ footer span {
 }
 
 @media screen and (max-width: 850px) {
+  body {
+    margin: 0 0.6em;
+  }
   header {
     width: 100%;
+  }
+  header #toggle:checked + nav {
+    display: block;
   }
   header label {
     display: block;
@@ -210,8 +259,5 @@ footer span {
   }
   header nav ul li {
     margin: 0.2em;
-  }
-  #toggle:checked + nav {
-    display: block;
   }
 }/*# sourceMappingURL=index.css.map */

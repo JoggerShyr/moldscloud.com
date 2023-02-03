@@ -2,17 +2,17 @@
 
 $primary-color: #3396ff;
 
-* { /* CSS reset */
+* { /* Initialization */
   margin: 0px;
-  border: 0px dashed green;
+  border: 0px dashed $primary-color;
   padding: 0px;
-}
 
-html { /* common CSS */
   font-family: "Nato Sans TC", sans-serif;
   font-size: initial;
   line-height: initial;
+}
 
+html { /* Utilities */
   a,
   a:visited {
     text-decoration: none;
@@ -30,6 +30,55 @@ html { /* common CSS */
     padding: 0px;
     color: $primary-color;
   }
+
+  .NestedOL {
+    ol { 
+      counter-reset: item;
+    }
+
+    ol li {
+      display: block;
+      position: relative;
+    }
+
+    ol li:before {
+      content: counters(item, ".")".";
+      counter-increment: item;
+      position: absolute;
+      margin-right: 100%;
+      right: 0.5em;
+   }
+  }
+
+  /*
+  .NestedOL {
+    ol {
+      margin: 0; padding: 0;
+      list-style-type: none;
+      counter-reset: item;
+    }
+    
+    li {
+      display: table;
+      counter-increment: item;
+      margin-bottom: 0.6em;
+    }
+    
+    li:before {
+        content: counters(item, ".") ". ";
+        display: table-cell;
+        padding-right: 0.6em;    
+    }
+    
+    li li {
+        margin: 0;
+    }
+    
+    li li:before {
+        content: counters(item, ".") " ";
+    }
+  }
+  */
 }
 
 body {
@@ -163,6 +212,7 @@ header {
     text-align: center;
     text-decoration: underline;
   }
+
 }
 
 footer {
@@ -198,8 +248,16 @@ footer {
 // media-query
 //
 @media screen and (max-width: 850px) {
+  body {
+    margin: 0 0.7em;
+  }
+
   header {
     width: 100%;
+
+    #toggle:checked + nav {
+      display: block;
+    }
 
     label {
       display: block;
@@ -227,9 +285,5 @@ footer {
         }
       }
     }
-  }
-
-  #toggle:checked + nav {
-    display: block;
   }
 }
