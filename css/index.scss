@@ -31,7 +31,7 @@ html { /* Utilities */
     color: $primary-color;
   }
 
-  //.NestedOL {
+  .NestedOL {
     ol { 
       counter-reset: item;
     }
@@ -48,7 +48,7 @@ html { /* Utilities */
       margin-right: 100%;
       right: 0.5em;
    }
-  //}
+  }
 
   /*
   .NestedOL {
@@ -188,8 +188,10 @@ header {
 }
 
 #about,
-#investor {
-  margin: 1em 0;
+#products,
+#human-resources,
+#contact {
+  margin: 2em 0;
 
   p {
     margin: 0.5em 0;

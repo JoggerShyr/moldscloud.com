@@ -54,14 +54,14 @@ html h2 {
   padding: 0px;
   color: #3396ff;
 }
-html ol {
+html .NestedOL ol {
   counter-reset: item;
 }
-html ol li {
+html .NestedOL ol li {
   display: block;
   position: relative;
 }
-html ol li:before {
+html .NestedOL ol li:before {
   content: counters(item, ".") ".";
   counter-increment: item;
   position: absolute;
@@ -162,11 +162,15 @@ header .Language li {
 }
 
 #about,
-#investor {
-  margin: 1em 0;
+#products,
+#human-resources,
+#contact {
+  margin: 2em 0;
 }
 #about p,
-#investor p {
+#products p,
+#human-resources p,
+#contact p {
   margin: 0.5em 0;
   border: 0px solid green;
   padding: 0em;
@@ -174,16 +178,24 @@ header .Language li {
 }
 #about ul,
 #about ol,
-#investor ul,
-#investor ol {
+#products ul,
+#products ol,
+#human-resources ul,
+#human-resources ol,
+#contact ul,
+#contact ol {
   margin: 2em;
 }
 #about li,
-#investor li {
+#products li,
+#human-resources li,
+#contact li {
   margin: 0.25em;
 }
 #about h2,
-#investor h2 {
+#products h2,
+#human-resources h2,
+#contact h2 {
   margin: 0.5em;
   text-align: center;
   text-decoration: underline;
