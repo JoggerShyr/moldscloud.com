@@ -54,14 +54,14 @@ html h2 {
   padding: 0px;
   color: #3396ff;
 }
-html .NestedOL ol {
+html ol {
   counter-reset: item;
 }
-html .NestedOL ol li {
+html ol li {
   display: block;
   position: relative;
 }
-html .NestedOL ol li:before {
+html ol li:before {
   content: counters(item, ".") ".";
   counter-increment: item;
   position: absolute;
@@ -132,16 +132,7 @@ header .Language li {
   height: auto;
   -o-object-fit: fill;
      object-fit: fill;
-  -webkit-animation: fadeIn 3s ease;
-          animation: fadeIn 3s ease;
-}
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: fadeIn 3s ease;
 }
 @keyframes fadeIn {
   from {
@@ -159,7 +150,6 @@ header .Language li {
   font-size: 1.5em;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   cursor: pointer;
 }
@@ -228,7 +218,7 @@ footer span {
 
 @media screen and (max-width: 850px) {
   body {
-    margin: 0 0.6em;
+    margin: 0 0.7em;
   }
   header {
     width: 100%;
